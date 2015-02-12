@@ -1,5 +1,13 @@
+Function.prototype.toDoc = function() {
+  if (typeof this.comment == 'function') {
+    return this.comment
+  } else {
+    return this.comment || "no comment for this function"
+  }
+}
+
 Function.prototype.help = function() {
-  console.log(this.comment || "no comment for this function")
+  console.log(this.toDoc())
 }
 
 function pad(num, len) {
