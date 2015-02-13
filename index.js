@@ -30,8 +30,9 @@ pad(123, 4)  //"${pad(123, 4)}"
 `
 
 function dots(i) {
-	if (i == 0)
-		return '';
+  if (typeof i === 'string') {
+    i = parseInt(i);
+  }
 	var arr = new Array(i);
 	for (var x = 0; x < arr.length; x++)
 		arr[x] = '.';
